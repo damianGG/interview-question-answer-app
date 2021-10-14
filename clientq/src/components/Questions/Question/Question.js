@@ -22,31 +22,34 @@ const Question = ({question,setCurrentId})=>{
         <Paper sx={{ maxWidth: 1028, my: 1, mx: 'auto', p: 2 }}>
           <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={1}>
-              <Grid item xs={10}>
-                <Typography variant="h6" align="center"> {question.question} </Typography>  
-              </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={12} align="center">
               <Rating size="small" name="read-only" value={question.difficulty}readOnly/>
             </Grid>
-
-            <Button size="large" color="primary" onClick={()=>dispatch(likeQuestion(question._id))}>
-                <KeyboardArrowUpIcon fontSize="large"/>
-                   {question.likeCount}
-            </Button>
-            <Button size="large" color="primary" onClick={()=>dispatch(disLikeQuestion(question._id))}>
-                <KeyboardArrowDownIcon fontSize="large"/>
-            </Button>
-            <Button size="small" color="primary" onClick={()=>dispatch(deleteQuestion(question._id))}>
-                <DeleteIcon fontSize="small"/>
-            </Button>
-            <Button  size="small" onClick={() => setCurrentId(question._id)}>
-                <EditIcon fontSize="small"/>
-            </Button>
-            <Button onClick={() => setVisible(!visible)}>
-                  {visible ? 'Hide answer' : 'Show me answer'}
-            </Button>
+            <Grid item xs={12}>
+                <Typography variant="h5" align="center"> {question.question} </Typography>  
+            </Grid>
+            <Grid item xs={12} align="center">
+                <Button size="large" color="primary" onClick={()=>dispatch(likeQuestion(question._id))}>
+                    <KeyboardArrowUpIcon fontSize="large"/>
+                      {question.likeCount}
+                </Button>
+                <Button size="large" color="primary" onClick={()=>dispatch(disLikeQuestion(question._id))}>
+                    <KeyboardArrowDownIcon fontSize="large"/>
+                </Button>
+                <Button size="small" color="primary" onClick={()=>dispatch(deleteQuestion(question._id))}>
+                    <DeleteIcon fontSize="small"/>
+                </Button>
+                <Button  size="small" onClick={() => setCurrentId(question._id)}>
+                    <EditIcon fontSize="small"/>
+                </Button> 
+            </Grid>
+            <Grid item xs={12} align="center">
+                <Button  onClick={() => setVisible(!visible)}>
+                  <Typography >{visible ? 'Hide answer' : 'Show me answer'}</Typography>
+                </Button> 
+            </Grid>
               {visible &&
-            <Grid item xs={10} >
+            <Grid item xs={12} >
              <Typography variant="subtitle1" align="center" style={{ wordWrap: 'break-word' }}> {question.answer}</Typography>
             </Grid>
             }
