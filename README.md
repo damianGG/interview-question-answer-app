@@ -6,7 +6,7 @@ Please check:
 # API: 
 https://interview-react-questions.herokuapp.com/questions
 
-Live:https://interview-react-question.netlify.app/
+Live:https://interview-react-question.netlify.app/ or www.questionsin.it
 
 # VOTE:
 You can like or dislike question
@@ -23,7 +23,7 @@ Left -TOP click on the "+" to add new question& anser, you also can choose of le
 
 # To do:
 
-- Improve the deploy on heroku and netfly <br />
+
 - Improve the style <br />
 - Add filter <br />
 - Add category <br />
